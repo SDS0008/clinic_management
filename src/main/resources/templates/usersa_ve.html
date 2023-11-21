@@ -1,41 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>Spring Boot Template</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
+    <form action="save">
 
-<center>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required/>
 
-<h1>CLINICAL MANAGEMENT SYSTEM</h1></br></br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" required/>
 
-<form action="Save">
+        <label for="doctor">Doctor:</label>
+        <input type="text" id="doctor" name="doctor" th:field="*{doctor}" required/>
 
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" th:field="*{address}" required/>
 
-Enter Name of the clinic:<input type="text" name="name" required="true"></br></br>
- 
-Enter Email:<input type="email" name="email" required="true"></br></br>
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" name="contact" th:field="*{contact}" required/>
 
-Enter Doctor name :<input type="text" name="doctor" required="true"></br></br>
+        <label for="fle">FLE:</label>
+        <input type="file" id="fle" name="fle" th:field="*{fle}" required/>
 
-Enter Address of the clinic:<input type="text" name="address" required="true"></br></br>
+        <label for="image">Image URL:</label>
+        <input type="file" id="image" name="image" th:field="*{image}" required/>
 
-Enter Contact_details:<input type="text" name="contact" required="true"  min="10" maxlength="10" ></br></br>
+        <button type="submit">Submit</button>
 
-Enter file :<input type="file" name="fle" required="true"></br></br>
-
-
-Enter file :<input type="file" name="image" required="true"></br></br>
-
-
-<input type="submit" value="click"></br></br>
-
-
-</form>
-
-</center>
+    </form>
 
 </body>
 </html>
